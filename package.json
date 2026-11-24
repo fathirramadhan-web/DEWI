@@ -1,0 +1,33 @@
+{
+  "name": "dewi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DEWI (Demo Engine for Web Interaction) — Windows-native Playwright + CDP screencast engine for narrated, zooming web app demo videos and 2x retina stills.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "bin": {
+    "dewi": "./bin/cli.mjs"
+  },
+  "exports": {
+    "./define": "./src/types.ts",
+    "./ready": "./src/ready.ts",
+    "./scene": "./src/scene.ts",
+    "./actor": "./src/actor.ts",
+    "./config": "./src/config.ts"
+  },
+  "scripts": {
+    "doctor": "node bin/cli.mjs doctor",
+    "init": "node bin/cli.mjs init",
+    "demo": "node bin/cli.mjs run",
+    "gaps": "node bin/cli.mjs gaps",
+    "probe-fps": "node bin/cli.mjs probe-fps",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@playwright/test": "^1.59.0",
+    "typescript": "^5.8.0"
+  }
+}

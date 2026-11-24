@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-11-24T20:13:17.808Z",
+  "filmedAt": "2026-11-25T09:00:00.000Z",
+  "stage": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "stillScale": 2,
+    "video": {
+      "width": 1920,
+      "height": 1080,
+      "crf": 18,
+      "webmCrf": 32
+    }
+  },
+  "themes": [
+    "dark"
+  ],
+  "tours": {
+    "dark": null
+  },
+  "scenes": [
+    {
+      "scene": "overview",
+      "title": "Adding a task with zoom and narration",
+      "blurb": "Demonstrates cursor tweening, typing, CSS zoom-in, 2x screenshot, and offline voice.",
+      "ref": null,
+      "assets": {
+        "dark": {
+          "stills": [
+            "dark/overview-added.png"
+          ],
+          "mp4": "dark/overview.mp4",
+          "webm": null,
+          "poster": "dark/overview.poster.jpg",
+          "seconds": 9.58,
+          "fps": 41.9,
+          "worstGapMs": 42,
+          "motionSeconds": 3.53,
+          "motionGaps": 138,
+          "gaps": [
+            {
+              "label": "<=17ms (60fps)",
+              "count": 45
+            },
+            {
+              "label": "<=34ms (30fps)",
+              "count": 68
+            },
+            {
+              "label": "<=50ms (20fps)",
+              "count": 25
+            },
+            {
+              "label": "<=100ms (10fps)",
+              "count": 0
+            },
+            {
+              "label": "<=250ms",
+              "count": 0
+            },
+            {
+              "label": "slower",
+              "count": 0
+            }
+          ],
+          "spoken": 1
+        }
+      }
+    }
+  ]
+}

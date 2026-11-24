@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TaskFlow Sample App</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --ink: #f8fafc;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --border: #334155;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.5 ui-sans-serif, system-ui, sans-serif;
+    display: grid;
+    place-items: center;
+  }
+  .shell {
+    width: 920px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  h1 { margin: 0; font-size: 22px; }
+  .toolbar { display: flex; gap: 10px; }
+  input {
+    background: #0f172a;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 14px;
+    width: 260px;
+    font: inherit;
+  }
+  button {
+    background: var(--accent);
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 16px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .list { display: grid; gap: 10px; }
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: #0f172a;
+    border: 1px solid var(--border);
+  }
+  .badge {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(56, 189, 248, 0.16);
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+  <div class="shell" data-testid="app-root" data-loaded="true">
+    <header>
+      <h1>TaskFlow</h1>
+      <div class="toolbar">
+        <input data-testid="task-input" placeholder="Add a new task..." />
+        <button data-testid="add-btn">Add Task</button>
+      </div>
+    </header>
+    <div class="list" data-testid="task-list"></div>
+  </div>
+  <script>
+    const list = document.querySelector('[data-testid="task-list"]');
+    const input = document.querySelector('[data-testid="task-input"]');
+    const btn = document.querySelector('[data-testid="add-btn"]');
+    const tasks = [
+      { title: 'Review architecture diagram', status: 'Ready' },
+      { title: 'Verify 60fps CDP screencast', status: 'Active' },
+    ];
+    function render() {
+      list.innerHTML = tasks
+        .map(
+          (t, i) =>
+            '<div class="card" data-testid="task-row-' + i + '">' +
+            '<span>' + t.title + '</span>' +
+            '<span class="badge">' + t.status + '</span>' +
+            '</div>'
+        )
+        .join('');
+    }
+    btn.addEventListener('click', () => {
+      const val = input.value.trim();
+      if (!val) return;
+      tasks.unshift({ title: val, status: 'New' });
+      input.value = '';
+      render();
+    });
+    render();
+  </script>
+</body>
+</html>

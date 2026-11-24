@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Build & Playwright runtime artifacts
+.build/
+**/.build/
+test-results/
+playwright-report/
+**/.pw-results/
+**/.frames/
+**/.entries/
+**/.tour-*.txt
+*.silent.mp4
+
+# OS & editor junk
+.DS_Store
+Thumbs.db
+*.log

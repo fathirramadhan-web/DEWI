@@ -6,7 +6,7 @@ A Windows-native, zero-watermark Playwright + CDP screencast engine for recordin
 
 Recorded from [`examples/sample-app`](examples/sample-app) (`1920x1080`, `60fps` H.264 + offline Windows SAPI voice-over):
 
-<video src="examples/sample-app/demo-out/dark/overview.mp4" poster="examples/sample-app/demo-out/dark/overview.poster.jpg" controls width="100%"></video>
+https://github.com/user-attachments/assets/522a147c-a218-4824-8025-ded366d23e78
 
 [![Sample demo preview](examples/sample-app/demo-out/dark/overview.poster.jpg)](examples/sample-app/demo-out/dark/overview.mp4)
 
